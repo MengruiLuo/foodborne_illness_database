@@ -1,0 +1,185 @@
+<html><head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta content="always" name="referrer">
+    <meta name="theme-color" content="#2932e1">
+    <title>Foodborne Illness Database</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+    <script src="/static/homepage.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/style.css" />
+    <style id="css_index" index="index" type="text/css">html,body{height:100%}
+html{overflow-y:auto}
+body{font:12px arial;text-align:center;background:#fff}
+body,p,form,ul,li{margin:0;padding:0;list-style:none}
+td{text-align:left}
+img{border:0}
+a{color:#00c}
+a:active{color:#f60}
+input{border:0;padding:0}
+#wrapper{position:relative;min-height:100%}
+#head{padding-bottom:100px;text-align:center;*z-index:1}
+#ftCon{height:50px;position:absolute;bottom:47px;text-align:left;width:100%;margin:0 auto;z-index:0;overflow:hidden}
+.ftCon-Wrapper{overflow:hidden;margin:0 auto;text-align:center;*width:640px}
+#qrcode{display:inline-block;margin-top:30px;width: 70%;}
+#qrcode .qrcode-text{color:#999;line-height:23px}
+#qrcode .qrcode-text a{color:#999;text-decoration:none}
+#qrcode .qrcode-text p{text-align:center}
+#qrcode .qrcode-text b{color:#666;font-weight:700}
+#qrcode .qrcode-text span{letter-spacing:1px}
+#qrcode .qrcode-text .title{color:#333;font-size:16px;line-height:32px;letter-spacing:2px}
+#ftConw{display:inline-block;text-align:left;margin-left:33px;line-height:22px;position:relative;top:-2px;*float:right;*margin-left:0;*position:static}
+#ftConw,#ftConw a{color:#999}
+#ftConw{text-align:center;margin-left:0}
+.bg{background-image:url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/global/img/icons_441e82f.png);background-repeat:no-repeat;_background-image:url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/global/img/icons_d5b04cc.gif)}
+#nv a,#nv b,.btn,#lk{font-size:14px}
+.s_btn{width:95px;height:32px;padding-top:2px\9;font-size:14px;background-color:#ddd;background-position:0 -48px;cursor:pointer}
+.s_btn_wr{width:97px;height:34px;display:inline-block;background-position:-120px -48px;*position:relative;z-index:0;vertical-align:top}
+#wrapper{min-width:810px;height:100%;min-height:600px}
+#head{position:relative;padding-bottom:0;height:100%;min-height:600px}
+#head .head_wrapper{height:100%}
+#lh a{margin-left:62px}
+#lk span{font:14px "宋体"}
+#lm a{color:#666}
+.s_ipt_wr.bg,.s_btn_wr.bg,#su.bg{background-image:none}
+.s_btn_wr{width:auto;height:auto;border-bottom:1px solid transparent;*border-bottom:0}
+.s_btn{width:100px;height:36px;color:#fff;font-size:15px;letter-spacing:1px;background:#3385ff;border-bottom:1px solid #2d78f4;outline:medium;*border-bottom:0;-webkit-appearance:none;-webkit-border-radius:0}
+.s_btn.btnhover{background:#317ef3;border-bottom:1px solid #2868c8;*border-bottom:0;box-shadow:1px 1px 1px #ccc}
+#index_logo img{display:inline-block;width:270px;height:129px}
+.s_form{position:relative;top:38.2%}
+.s_form_wrapper{position:relative;top:-191px}
+.s_ipt_wr{height:34px}
+#form{margin:22px auto 0;width:641px;text-align:left;z-index:100}
+.bdsug{display:none;position:absolute;width:538px;background:#fff;border:1px solid #ccc;_overflow:hidden;box-shadow:1px 1px 3px #ededed;-webkit-box-shadow:1px 1px 3px #ededed;-moz-box-shadow:1px 1px 3px #ededed;-o-box-shadow:1px 1px 3px #ededed}
+.bdsug.bdsugbg ul{background:url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/sugbg_1762fe7.png) 100% 100% no-repeat;background-size:100px 110px;background-image:url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/sugbg_90fc9cf.gif)\9}
+.bdsug li{width:522px;color:#000;font:14px arial;line-height:25px;padding:0 8px;position:relative;cursor:default}
+.bdsug li.bdsug-s{background:#f0f0f0}
+.bdsug-store span,.bdsug-store b{color:#7A77C8}
+.bdsug-store-del{font-size:12px;color:#666;text-decoration:underline;position:absolute;right:8px;top:0;cursor:pointer;display:none}
+.bdsug-s .bdsug-store-del{display:inline-block}
+.bdsug-ala{display:inline-block;border-bottom:1px solid #e6e6e6}
+.bdsug-ala h3{line-height:14px;background:url(//www.baidu.com/img/sug_bd.png) no-repeat left center;margin:8px 0 5px;font-size:12px;font-weight:400;color:#7B7B7B;padding-left:20px}
+.bdsug-ala p{font-size:14px;font-weight:700;padding-left:20px}
+.bdsug .bdsug-direct{width:auto;padding:0;border-bottom:1px solid #f1f1f1}
+.bdsug .bdsug-direct p{color:#00c;font-weight:700;line-height:34px;padding:0 8px;cursor:pointer;white-space:nowrap;overflow:hidden}
+.bdsug .bdsug-direct p img{width:16px;height:16px;margin:7px 6px 9px 0;vertical-align:middle}
+.bdsug .bdsug-direct p span{margin-left:8px}
+.bdsug .bdsug-direct p i{font-size:12px;line-height:100%;font-style:normal;font-weight:400;color:#fff;background-color:#2b99ff;display:inline;text-align:center;padding:1px 5px;*padding:2px 5px 0;margin-left:8px;overflow:hidden}
+.bdsug .bdsug-pcDirect-s .bdsug-pc-direct-tip,.bdsug .bdsug-pcDirect-is-s .bdsug-pc-direct-tip-is{background-position:0 -15px}
+.bdsug .bdsug-newicon i{letter-spacing:0;font-style:normal}
+#u1{z-index:2;color:#fff;position:absolute;right:0;top:0;margin:19px 0 5px;padding:0 96px 0 0}
+#u1 a.mnav,#u1 a.mnav:visited{float:left;color:#333;font-weight:700;line-height:24px;margin-left:20px;font-size:13px;text-decoration:underline}
+#u1 a.mnav:hover{color:#00c}
+.bdpfmenu a{display:block;text-align:left;margin:0!important;padding:0 9px;line-height:26px;text-decoration:none}
+#wrapper .bdpfmenu a:link,#wrapper .bdpfmenu a:visited{background:#fff;color:#333}
+#wrapper .bdpfmenu a:hover,#wrapper .bdpfmenu a:active{background:#38f;text-decoration:none;color:#fff}
+#wrapper .bdnuarrow{width:0;height:0;font-size:0;line-height:0;display:block;position:absolute;top:-10px;left:50%;margin-left:-5px}
+#wrapper .bdnuarrow em,#wrapper .bdnuarrow i{width:0;height:0;font-size:0;line-height:0;display:block;position:absolute;border:5px solid transparent;border-style:dashed dashed solid}
+#wrapper .bdnuarrow em{border-bottom-color:#d8d8d8;top:-1px}
+#wrapper .bdnuarrow i{border-bottom-color:#fff;top:0}
+.s-isindex-wrap #wrapper .bdnuarrow{height:13px;background:url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/icons_0c37e9b.png) no-repeat -90px -1px}
+#prefpanel form{_width:850px}
+#wrapper .bdbri.bdbriimg .bdmainlink a,#wrapper .bdbri.bdbriimg .bdothlink a{display:block;text-align:center;width:66px;height:76px;margin:0 auto;border-bottom:#f0f0f0 1px solid;color:#666;text-decoration:none;overflow:hidden}
+#wrapper .bdbri.bdbriimg .bdmainlink a:visited,#wrapper .bdbri.bdbriimg .bdothlink a:visited{color:#666}
+#wrapper .bdbri.bdbriimg .bdmainlink a:hover,#wrapper .bdbri.bdbriimg .bdothlink a:hover{color:#666;text-decoration:underline}
+#wrapper .bdbri.bdbriimg .bdmainlink a:active,#wrapper .bdbri.bdbriimg .bdothlink a:active{color:#00c;text-decoration:underline}
+#wrapper .bdbri.bdbriimg span{width:36px;height:36px;display:block;margin:10px auto 5px;background:url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/bdbri_icons_194ae06.png) no-repeat;cursor:pointer}
+#wrapper .bdbri.bdbriimg .bdbrievenmore a:link,#wrapper .bdbri.bdbriimg .bdbrievenmore a:visited{color:#666;text-decoration:underline}
+#wrapper .bdbri.bdbriimg .bdbrievenmore a:hover{color:#666;text-decoration:underline}
+#wrapper .bdbri.bdbriimg .bdbrievenmore a:active{color:#00c}
+.s_ipt::-webkit-input-placeholder{padding-left:3px;color:#aaa;font-size:13px}
+.s_ipt::-moz-placeholder{padding-left:3px;color:#aaa;font-size:13px}
+.s_ipt:-ms-input-placeholder{padding-left:3px;color:#aaa;font-size:13px}
+.s_ipt::placeholder{padding-left:3px;color:#aaa;font-size:13px}
+    </style>
+    <style data-for="result" id="css_index_result" type="text/css">#seth{display:inline;behavior:url(#default#homepage)}
+    .s_ipt_wr{border:1px solid #b6b6b6;border-color:#7b7b7b #b6b6b6 #b6b6b6 #7b7b7b;background:#fff;display:inline-block;vertical-align:top;width:539px;margin-right:0;border-right-width:0;border-color:#b8b8b8 transparent #ccc #b8b8b8;overflow:hidden}
+    .wrapper_s .s_ipt_wr{width:439px}
+    .wrapper_s .s_ipt{width:434px}
+    .wrapper_s .s_ipt_tip{width:434px}
+    .s_ipt_wr:hover,.s_ipt_wr.ipthover{border-color:#999 transparent #b3b3b3 #999}
+    .s_ipt_wr.iptfocus{border-color:#4791ff transparent #4791ff #4791ff}
+    .s_ipt_tip{color:#aaa;position:absolute;z-index:-10;font:16px/22px arial;height:32px;line-height:32px;padding-left:7px;overflow:hidden;width:526px}
+    .s_ipt{width:526px;height:22px;font:16px/18px arial;line-height:22px;margin:6px 0 0 7px;padding:0;background:transparent;border:0;outline:0;-webkit-appearance:none}
+    #kw{position:relative}
+    #u .username i{background-position:-408px -144px}
+    .bdpfmenu a,.usermenu a{display:block;text-align:left;margin:0!important;padding:0 9px;line-height:26px;text-decoration:none}
+    .briiconsbg{background-repeat:no-repeat;background-size:300px 18px;background-image:url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/icons_0c37e9b.png);background-image:url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/icons_809ae65.gif)\9}
+    #u{z-index:301;position:absolute;right:0;top:0;margin:21px 9px 5px 0;padding:0}
+    .wrapper_s #u{margin-right:3px}
+    #u a{text-decoration:underline;color:#333;margin:0 7px}
+    #mCon #imeSIcon{background-position:-408px -144px;margin-left:0}
+    #mCon span{color:#333}
+    .bdpfmenu a:link,.bdpfmenu a:visited,#u .usermenu a:link,#u .usermenu a:visited{background:#fff;color:#333}
+    .bdpfmenu a:hover,.bdpfmenu a:active,#u .usermenu a:hover,#u .usermenu a:active{background:#38f;text-decoration:none;color:#fff}
+    #wrapper .bdnuarrow{width:0;height:0;font-size:0;line-height:0;display:block;position:absolute;top:-10px;left:50%;margin-left:-5px}
+    #wrapper .bdnuarrow em,#wrapper .bdnuarrow i{width:0;height:0;font-size:0;line-height:0;display:block;position:absolute;border:5px solid transparent;border-style:dashed dashed solid}
+    #wrapper .bdnuarrow em{border-bottom-color:#d8d8d8;top:-1px}
+    #wrapper .bdnuarrow i{border-bottom-color:#fff;top:0}
+    #prefpanel{background:#fafafa;display:none;opacity:0;position:fixed;_position:absolute;top:-359px;z-index:500;width:100%;min-width:960px;border-bottom:1px solid #ebebeb}
+    #prefpanel form{_width:850px}
+    .quickdelete-wrap{position:relative}
+    .quickdelete-wrap input{width:500px}
+    .wrapper_l .quickdelete-wrap input{width:500px}
+    .wrapper_s .quickdelete-wrap input{width:402px}
+    input::-ms-clear{display:none}
+    #lh a{margin-left:25px}
+    </style>
+</head>
+<body link="#0000cc" style="">
+    <div id="wrapper" style="display: block;">
+
+        <script>if(window.bds&&bds.util&&bds.util.setContainerWidth){bds.util.setContainerWidth();}</script>
+        <div id="head" class="">
+        <div class="head_wrapper">
+            <div class="s_form">
+                <div class="s_form_wrapper soutu-env-mac soutu-env-index">
+                    <p style="font-size:45px;color:#0080FF;padding: 85px 0px 10px 0px;letter-spacing:1px">Foodborne Illness Database</p>
+                    <form id="form" name="f" action="/s" class="fm">
+                        <span class="bg s_ipt_wr quickdelete-wrap">
+                            <input id="kw" name="wd" class="s_ipt" value="" maxlength="255" required="required" autocomplete="off" placeholder="Please enter the keyword. (Date, Location, Food, Symptom ...) ">
+                        </span><span class="bg s_btn_wr">
+                        <input type="submit" id="su" value="Search" class="bg s_btn"></span>
+                        <div class="search_tag" align="center" style="padding:30px 0px 0px 0px;color:#7B7B7B">
+                            <label class="container">Date
+                              <input type="radio" checked="checked" name="radio" value="date">
+                              <span class="checkmark"></span>
+                            </label>
+                            &nbsp;
+                            <label class="container">Location
+                              <input type="radio" name="radio" value="location">
+                              <span class="checkmark"></span>
+                            </label>
+                            &nbsp;
+                            <label class="container">food
+                              <input type="radio" name="radio" value="food">
+                              <span class="checkmark"></span>
+                            </label>
+
+                            <label class="container">Symptom
+                              <input type="radio" name="radio" value="symptom">
+                              <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+        <div id="ftCon">
+            <div class="ftCon-Wrapper">
+                <div id="ftConw">
+                    <p id="lh">
+                        <a>Foodborne Illness Database</a>
+                    </p>
+                    <p id="lh">
+                        <a>Dandan Tao, Dongyu Zhang, Ruofan Hu</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

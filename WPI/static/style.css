@@ -1,0 +1,112 @@
+.form-popup {
+  display:none;
+  color:black;
+  position:fixed;
+  top:10px;
+  right:10px;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 210px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+    height: 22px;
+    width: 100%;
+    padding: 15px;
+    font:13px arial;
+    margin: 6px 0 5px 0;
+    border: 1px solid #b6b6b6;
+    background:transparent;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    border: 1px solid #0080FF;
+    outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+    display: block;
+  background-color: #3385FF;
+  color: white;
+  border: none;
+  cursor: pointer;
+    width:100%;
+    height:32px;
+    margin: 6px 0 5px 0;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+/* Customize the label (the container) */
+.container {
+  position: relative;
+  padding-left: 30px;
+    padding-right: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing:1px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+    display:inline-block;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
